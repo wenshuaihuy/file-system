@@ -105,7 +105,7 @@ public class FsDao {
         QueryRunner qr = new QueryRunner();
         ////查询所有姓名包含“张”的记录
         //select * from student where name like '张'
-        String sql = "select * from test_fs where name = ?";
+        String sql = "select * from test_fs where name like ?";
         List<Fs> list = new ArrayList<>();
         //查询所有
         try {
