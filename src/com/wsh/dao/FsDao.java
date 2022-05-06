@@ -103,11 +103,8 @@ public class FsDao {
 
     public List<Fs> findByFileName(String fileName) {
         QueryRunner qr = new QueryRunner();
-        ////查询所有姓名包含“张”的记录
-        //select * from student where name like '张'
         String sql = "select * from test_fs where name like ?";
         List<Fs> list = new ArrayList<>();
-        //查询所有
         try {
             list = qr.query(conn, sql, new BeanListHandler<Fs>(Fs.class), "%" + fileName + "%");
             conn.close();
@@ -116,8 +113,6 @@ public class FsDao {
         }
         return list;
     }
-
-
 
     /**
      * delete data

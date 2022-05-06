@@ -27,10 +27,8 @@ public class FindAllFs extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        测试
         System.out.println(33);
-//        调用Service层方法
         FsService fsService = new FsService();
         List<Fs> list = fsService.finaAll();
-        //将集合存到域对象
         request.setAttribute("list", list);
         //将数据转发到
         request.getRequestDispatcher("/list-all.jsp").forward(request, response);
