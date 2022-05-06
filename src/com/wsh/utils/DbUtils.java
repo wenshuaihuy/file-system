@@ -38,9 +38,6 @@ public class DbUtils {
 //        return connection;
 //    }
 
-
-
-
     public static DataSource getConnection() {
         DataSource ds = null;
         try {
@@ -52,7 +49,6 @@ public class DbUtils {
             properties.load(is);
             // 创建druid的连接
             ds = DruidDataSourceFactory.createDataSource(properties);
-
         } catch (Exception e) {
             e.printStackTrace();
         }
